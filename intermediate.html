@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Basics 1</h2>
+ 
+
+<script>
+
+// Part I 
+function star_string(n,char)
+{
+    var str= "";
+    for ( var i = 0;i<n;i++){
+       str = str + char;
+    }
+    return str;
+}
+// b= star_string(5,'*');
+// console.log(b);
+//part II
+function draw_stars(arr)
+{
+    
+    for ( var i = 0;i<arr.length;i++)
+    {
+        if (typeof arr[i] === 'string')
+        {
+             
+            star=star_string(arr[i].length,((arr[i].charAt(0)).toLowerCase()));
+        }
+        else
+        {
+            star= star_string(arr[i],'*');
+        }
+       console.log(star);
+    }
+    
+    return true
+  
+}
+//console.log(draw_stars([12,3]));
+console.log(draw_stars(['Apple','Cat',12,'John']));
+//Part III
+
+
+
+
+</script>
+
+</body>
+</html>

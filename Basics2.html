@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Basics 1</h2>
+ 
+
+<script>
+// Basic5
+function magic_multiply(x,y)
+{
+    var xarray=false;
+    if(x.constructor === Array){
+        console.log("x is an array")
+        arrlen= x.length;
+        xarray == true;
+    }
+    if(y.constructor === Array){
+        console.log("y is an array")
+        arrlen= y.length;
+        yarray == true;
+    };
+    if(xarray){
+        for ( var i = 0;i<xarray;i++){
+            str = str + ','+ (y* x[i]);
+    
+        }
+        return str;
+    }else
+    {
+     
+    output = x * y;
+    return output;
+    }
+}
+let test1 = magic_multiply(5,2);
+console.log(test1);
+
+let test2 = magic_multiply(0,0);
+console.log(test2);
+
+let test5 = magic_multiply([1,2,3],2);
+console.log(test5); 
+
+let test3 = magic_multiply("Brendo",4);
+console.log(test3); 
+
+let test4 = magic_multiply(4,"Brendo");
+console.log(test4); 
+ 
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Basics 1</h2>
+ 
+
+<script>
+// // Math 1
+// function zero_negativity(arr)
+// {
+
+//     for ( var i = 0;i<arr.length;i++){
+//         if(arr[i]<0){
+//             console.log("negative number");
+//             return false;
+//         } 
+//     }
+//             return true;
+// }
+        
+// console.log(zero_negativity([1,2,3]));
+// console.log(zero_negativity([1,-2,3]));
+
+// // Math 2
+function is_Even(num)
+{
+
+    if (num % 2 == 0){
+        return true;
+    }else{
+        return false;
+    }
+    
+}
+        
+// console.log(is_Even(78));
+// console.log(is_Even(9));
+
+// Math 3
+// function how_many_even(arr)
+// {
+//     var count = 0;
+//     for ( var i = 0;i<arr.length;i++){
+//     if (is_Even(arr[i])){
+//         count = count + 1;
+//     }
+//     }
+//         return count;
+
+    
+
+// }
+// arr=[78,3,7];
+// count = how_many_even([4,8,12,11]); 
+// console.log(count);
+// count1= how_many_even([4,8,13,11]); 
+// console.log(count1);
+// Math 4
+// function create_dummy_array(n)
+// {
+//     var arr=[];
+//     for ( var i = 0;i<n;i++){
+//        arr[i]=Math.random()*(9-0) + 0;
+//     }
+    
+//     return arr;
+// }
+// b= create_dummy_array(5);
+// console.log(b);
+
+// Math 5
+function random_choice(arr)
+{
+    var newarr=[];
+    for ( var i = 0;i<arr.length;i++){
+       newarr[i]=Math.random()*(arr.length-0) + 0;
+    }
+    
+    return newarr;
+}
+b= random_choice([5,23,24,65,4,4,5,3,2,6,6,7,9]);
+console.log(b);
+</script>
+
+</body>
+</html>
