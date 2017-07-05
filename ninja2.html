@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Basics 1</h2>
+ 
+
+<script>
+function DNinja(name){
+    this.name=name;
+    this.y=100;
+    var speed=3;
+    var x=3;}
+
+function Ninja(name){
+    this.name=name;
+    this.health=100;
+    var speed=3;
+    var strength=3;
+        // 'Getter' functions help us read private variables
+    this.readstrength = function(){
+      return strength;
+    }
+    this.sayname= function ()
+    {
+        console.log(this.name);
+    }
+
+    this.showStats= function ()
+    {
+        console.log(this.health , strength,speed);
+    }
+    this.drinkSake = function ()
+    {
+        this.health+=10;
+        console.log(this.health);
+    }
+    this.punch= function(other_ninja)
+        {
+            other_ninja.health = other_ninja.health  - 5;
+            console.log(other_ninja.health);
+        }
+
+    this.kick= function(other_ninja)
+        {
+            other_ninja.health = other_ninja.health  - (5*this.readstrength());
+            console.log("kick",other_ninja.health);
+        }
+}
+var ninja1 = new Ninja('orange');
+ninja1.sayname();
+ninja1.showStats();
+ninja1.drinkSake();
+var ninja2 = new Ninja('red');
+
+ninja1.punch(ninja2);
+ninja1.kick(ninja2);
+
+var ninjadup = new DNinja('red');
+if( ninjadup instanceof Ninja){
+    console.log("instanceof validation true");
+    ninja1.punch(ninjadup);
+    ninja1.kick(ninjadup);
+}else
+{console.log("instanceof validation false");}
+</script>
+
+</body>
+</html>
