@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Basics 1</h2>
+ 
+
+<script>
+
+class Ninja{
+    constructor(name)
+    {
+        this.name=name;
+        this.health=100;
+        var speed=3;
+        var strength=3;
+        this.getStrength=function(){return strength}
+        this.getSpeed=function(){return speed}
+    }
+        // 'Getter' functions help us read private variables
+    // get speedval(){
+    //   return speed;
+    // }
+    // get strengthval(){
+    //   return strength;
+    // }
+    sayname()
+    {
+        console.log(this.name);
+        return this;
+    }
+
+    showStats()
+    {
+        console.log(`Strength: ${this.getStrength()}, Speed : ${this.getSpeed()}, Health: ${this.health}`)
+         return this;
+
+
+    }
+    drinkSake()
+    {
+        this.health+=10;
+        console.log(this.health);
+         return this;
+    }
+    punch(other_ninja)
+        {
+            other_ninja.health = other_ninja.health  - 5;
+            console.log(other_ninja.health);
+             return this;
+        }
+
+    kick(other_ninja)
+        {
+            other_ninja.health = other_ninja.health  - (5*this.getStrength());
+            console.log("kick",other_ninja.health);
+        }
+}
+
+class Sensei extends Ninja {
+    constructor(name){
+        super(name)
+        this.health=200;
+        this.speed=10;
+        this.strength=10;
+        this.wisdom=10;
+    }
+    showStats(){
+        console.log(`Strength: ${this.getStrength()}, Speed : ${this.getSpeed()}, Health: ${this.health} , Wisdom:${this.wisdom}`)
+         return this;
+    }
+    speakWisdom(){
+         super.drinkSake();
+        console.log("Code is fun")
+    }
+}
+
+let sensei1 = new Sensei("red");
+sensei1.showStats();
+sensei1.speakWisdom();
+let ninja1 = new Ninja('orange');
+ninja1.sayname();
+ninja1.showStats();
+ 
+ninja1.drinkSake();
+let ninja2 = new Ninja('red');
+
+ninja1.punch(ninja2);
+ninja1.kick(ninja2);
+
+var ninjadup = new DNinja('red');
+if( ninjadup instanceof Ninja){
+    console.log("instanceof validation true");
+    ninja1.punch(ninjadup);
+    ninja1.kick(ninjadup);
+}else
+{console.log("instanceof validation false");}
+</script>
+
+</body>
+</html>
